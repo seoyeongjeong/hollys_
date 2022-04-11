@@ -1,0 +1,639 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+<title>서영정 - 할리스커피 리뉴얼</title>
+  <!--[if lt IE 9]>
+      <script src="js/html5.js"></script>
+   <![endif]-->
+<link href="css/common.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/slick.css">
+<script src="./js/html5.js" type="text/javascript"></script>
+<script src="./js/jquery-3.1.1.min.js" type="text/javascript"></script>
+  <script src="http://code.jquery.com/jquery-migrate-3.0.0.js"></script>  
+  <script src="./js/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+    $(function(){
+      $('.center').slick({
+          dots: true,
+          infinite: true,
+          speed: 300,
+          slidesToShow: 1,
+          centerMode: true
+});//슬라이드
+        
+      //메뉴탭
+      $('.best-m').each(function(){
+		var anchor = $(this).find('.bests a'); //a).tabs a 모두
+		var anchor_on = $(this).find('.bests a.on'); //b) a중 .on 
+		var href_on = anchor_on.attr('href'); //c) b의 href ==> #panel1-1
+		var panel = $(this).find('.panel');
+
+		$(href_on).show();
+
+		anchor.each(function(){
+			var href_this = $(this).attr('href');
+			$(this).click(function(){
+				panel.hide();
+				anchor.removeClass('on');
+				$(this).addClass('on');
+				$(href_this).show();
+        //누르면 화면 이동하는 거 작동 안하게 하는 것 ↓
+  jQuery('.bests a').click(function () {
+       return false;
+
+ });
+			})
+		})
+	})
+//sns슬라이드
+  $(".regular").slick({
+        dots: false,
+        infinite: true,//무한으로 슬라이드 됨
+        slidesToShow: 3,
+        slidesToScroll: 1 // 몇 개씩 넘어가게 할 것인지
+      });
+//새소식 메뉴탭
+$('.news-btn').each(function(){
+		var anchor = $(this).find('.news-list a'); //a).tabs a 모두
+		var anchor_on = $(this).find('.news-list a.news-on'); //b) a중 .on 
+		var href_on = anchor_on.attr('href'); //c) b의 href ==> #panel1-1
+		var panel = $(this).find('.news-panel');
+
+		$(href_on).show();
+		anchor.each(function(){
+			var href_this = $(this).attr('href');
+			$(this).click(function(){
+				$('.news-panel').hide();
+				anchor.removeClass('news-on');
+				$(this).addClass('news-on');
+				$(href_this).show();
+           //누르면 화면 이동하는 거 작동 안하게 하는 것 ↓
+  jQuery('.news-list a').click(function () {
+       return false;
+       
+
+ });
+        
+			})
+		})
+	})
+
+   //프랜차이즈 메뉴탭
+   $('.franc-tabSet').each(function(){
+		var anchor = $(this).find('.franc-tabs a'); //a).tabs a 모두
+		var anchor_on = $(this).find('.franc-tabs a.franc-on'); //b) a중 .on 
+		var href_on = anchor_on.attr('href'); //c) b의 href ==> #panel1-1
+		var panel = $(this).find('.franc-panel');
+
+		$(href_on).show();
+		anchor.each(function(){
+			var href_this = $(this).attr('href');
+			$(this).click(function(){
+        $('.franc-panel').hide();
+				anchor.removeClass('franc-on');
+				$(this).addClass('franc-on');
+				$(href_this).show();
+           //누르면 화면 이동하는 거 작동 안하게 하는 것 ↓
+  jQuery('.franc-tabs a').click(function () {
+       return false;
+
+ });
+			})
+		})
+	})
+  //픽시드
+
+$(window).scroll(function(){
+		
+    var	windowTop =$(window).scrollTop()+350;
+    $(".quick_box ").stop().animate({top:windowTop+"px" },500);
+    //$("#q_mn").stop().animate({속성:"속성값", 속성:"속성값" },1000);	
+    
+});
+    })//ready
+  
+  </script>
+
+</head>
+
+<body >
+<div id="wrap">
+  <!--헤더-->
+  <header id="header" >
+    <nav class="nav">
+          <h1><a href="./index.html"><img src="images/hollys_logo.png" alt="할리스 로고"></a></h1>
+
+      <div id="nav2"><!--nav1-->
+
+          <div class="nav2_box"></div>
+
+            <ul class="depth1"><!--목록열기-->
+
+
+              <li><!--큰메뉴열기-->
+                <a href="#">브랜드소개</a>
+                  <ul><!--작은메뉴열기-->
+                      <li><a href="#"><h3>브랜드소개</h3></a></li>
+                      <li><a href="#">할리스 이야기</a></li>
+                      <li><a href="#">할리스 위치 및<br>연락처</a></li>
+                      <li><a href="#">B2B사업 소개</a></li>
+                  </ul><!--작은메뉴닫기-->
+              </li><!--큰메뉴닫기-->
+
+
+              <li><!--큰메뉴열기-->
+                <a href="#">멤버십</a>
+                  <ul><!--작은메뉴열기-->
+                    <li><a href="#"><h3>멤버십</h3></a></li>
+                    <li><a href="#">할리스 어플</a></li>
+                    <li><a href="#">멤버십 혜택</a></li>
+                  </ul><!--작은메뉴닫기-->
+              </li><!--큰메뉴닫기-->
+
+
+              <li><!--큰메뉴열기-->
+                <a href="#">메뉴</a>
+                  <ul><!--작은메뉴열기-->
+                    <li><a href="#"><h3>메뉴</h3></a></li>
+                    <li><a href="#">커피</a></li>
+                    <li><a href="#">음료</a></li>
+                    <li><a href="#">푸드</a></li>
+                    <li><a href="#">MD</a></li>
+                  </ul><!--작은메뉴닫기-->
+              </li><!--큰메뉴닫기-->
+
+
+              <li><!--큰메뉴열기-->
+                <a href="#">소식</a>
+                  <ul><!--작은메뉴열기-->
+                    <li><a href="#"><h3>소식</h3></a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">보도자료</a></li>
+                    <li><a href="#">채용안내</a></li>
+                  </ul><!--작은메뉴닫기-->
+              </li><!--큰메뉴닫기-->
+
+
+              <li><!--큰메뉴열기-->
+                <a href="#">고객센터</a>
+                  <ul><!--작은메뉴열기-->
+                    <li><a href="#"><h3>고객센터</h3></a></li>
+                    <li><a href="#">1:1문의</a></li>
+                    <li><a href="#">Q &amp;A</a></li>
+                    <li><a href="#">푸드</a></li>
+                    <li><a href="#">MD</a></li>
+                  </ul><!--작은메뉴닫기-->
+              </li><!--큰메뉴닫기-->
+
+
+            </ul><!--목록닫기-->
+      </div><!--nav2-->
+     
+       <div class="nav3"><!--nav_3-->
+            <ul>
+              <li><p><a href="#">멤버십 회원가입</a></p></li>
+              <li><p><a href="#">멤버십 로그인</a></p></li>
+              <li><p><a href="#">가맹문의</a></p></li>
+            </ul>
+      </div><!--nav3-->
+    </nav><!--nav class-->
+  </header>
+ <!-----------슬라이드------------>
+  <section id="section1">
+    <section class="center slider">
+      <div>
+        <img src="images/main_slider1.jpg">
+      </div>
+      <div>
+        <img src="images/main_slider2.jpg">
+      </div>
+      <div>
+        <img src="images/main_slider3.jpg">
+      </div>
+    </section>
+  </section>
+
+  <!--------best menu--------->
+  <section id="section2">
+    <div class="inner">
+      <h2>BEST MENU</h2>
+      <div class="best-m">
+        <!--메뉴탭-->
+        <ul class="bests">
+          <li><a href="#panel1-1"class="on">#커피</a></li>
+          <li><a href="#panel1-2">#음료</a></li>
+          <li><a href="#panel1-3">#푸드</a></li>
+          <li><a href="#panel1-4">#MD</a></li>
+        </ul>
+        <div class="panels">
+          <div class="panel" id="panel1-1">
+            <ul><!--메뉴리스트1-->
+              <li><!--커피메뉴1-->
+                <a href="#">
+                  <img src="./images/menu_coffe1.jpg" alt="아메리카노">
+                    <div class="cover">
+                      <h3>아메리카노</h3>
+                      <p>부드러운 풍미와 균형잡힌 바디감의<br> 디카페인 아메리카노                      </p>
+                    </div>
+                </a>
+              </li>
+              <li><!--커피메뉴2-->
+                <a href="#">
+                  <img src="./images/menu_coffe2.jpg" alt="콜드브루 라떼">
+                  <div class="cover">
+                    <h3>콜드브루 라떼</h3>
+                    <p>콜드브루 커피의 풍부한 풍미와<br> 우유의 고소함이 더해진 라떼</p>
+                  </div>
+                </a>
+              </li>
+              <li><!--커피메뉴3-->
+                <a href="#">
+                  <img src="./images/menu_coffe3.jpg" alt="콜드브루 딜라이트">
+                  <div class="cover">
+                    <h3>콜드브루 딜라이트</h3>
+                    <p>실키한 연유베이스에 콜드브루를 넣어<br> 부담없이 즐기는 라떼</p>
+                  </div>
+                </a>
+              </li>
+              <li><!--커피메뉴4-->
+                <a href="#">
+                  <img src="./images/menu_coffe4.jpg" alt="바닐라 딜라이트">
+                  <div class="cover">
+                    <h3>바닐라 딜라이트</h3>
+                    <p>디카페인 원두로 변경해 더 부드럽고 <br>편안해진 바닐라 딜라이트</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="panel" id="panel1-2">
+            <ul><!--메뉴리스트2-->
+              <li><!--쥬스메뉴1-->
+                <a href="#">
+                  <img src="./images/menu_juice1.jpg" alt="민트초코">
+                  <div class="cover">
+                    <h3>민트초코</h3>
+                    <p>진한 민트 맛이 특징인 상쾌하면서<br> 부드러운 맛의 민트 초코 라떼</p>
+                  </div>
+                </a>
+              </li>
+              <li><!--쥬스메뉴2-->
+                <a href="#">
+                  <img src="./images/menu_juice2.jpg" alt="밀크티라떼">
+                  <div class="cover">
+                    <h3>밀크티라떼</h3>
+                    <p>향긋한 홍차에 우유의 고소함과<br> 부드러움을 더한 티라떼</p>
+                  </div>
+                </a>
+              </li>
+              <li><!--쥬스메뉴3-->
+                <a href="#">
+                  <img src="./images/menu_juice3.jpg" alt="그린티라떼">
+                  <div class="cover">
+                    <h3>그린티라떼</h3>
+                    <p>100% 국내산 녹차와 우유를 블렌딩해<br> 고소하고 쌉싸름한 맛과 라이트한 음료</p>
+                  </div>
+                </a>
+              </li>
+              <li><!--쥬스메뉴4-->
+                <a href="#">
+                  <img src="./images/menu_juice4.jpg" alt="핫초코">
+                  <div class="cover">
+                    <h3>핫초코</h3>
+                    <p>진한 초콜렛과 우유가 어우러져 <br> 달콤한 초콜릿 음료</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="panel" id="panel1-3">
+            <ul><!--메뉴리스트3-->
+              <li><!--푸드메뉴1-->
+                <a href="#">
+                  <img src="./images/menu_food1.jpg" alt="딸기숲 치즈 케이크
+                  ">
+                  <div class="cover">
+                    <h3>딸기숲 치즈 케이크</h3>
+                    <p>진하고 풍부한 맛의 뉴욕 치즈 케이크에<br> 달콤한 초코시트와 생딸기를 한 가득 <br>올린 케이크</p>
+                  </div>
+                </a>
+              </li>
+              <li><!--푸드메뉴2-->
+                <a href="#">
+                  <img src="./images/menu_food2.jpg"  alt="크랜베리 치킨 샌드위치">
+                  <div class="cover">
+                    <h3>크랜베리 치킨 샌드위치</h3>
+                    <p>통밀 식빵에 부드러운 치킨과 <br> 상큼함이 매력적인 크랜베리가 만나 <br>톡톡 튀는 샌드위치</p>
+                  </div>
+                </a>
+              </li>
+              <li><!--푸드메뉴3-->
+                <a href="#">
+                  <img src="./images/menu_food3.jpg"  alt="트러플 머쉬룸 수프볼">
+                  <div class="cover">
+                    <h3>트러플 머쉬룸 수프볼</h3>
+                    <p>포르치니 버섯, 양송이 버섯의 <br>깊은 풍미와 진한 트러플 풍미가 <br>조화를 이룬 수프</p>
+                  </div>
+                </a>
+              </li>
+              <li><!--푸드메뉴4-->
+                <a href="#">
+                  <img src="./images/menu_food4.jpg"  alt="딸기 생크림">
+                  <div class="cover">
+                    <h3>딸기 생크림</h3>
+                    <p>부드러운 생크림과 <br>달콤한 딸기가 샌딩된 <br>조각 케이크</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="panel" id="panel1-4">
+            <ul><!--메뉴리스트4-->
+              <li><!--MD메뉴1-->
+                <a href="#">
+                  <img src="./images/menu_md1.jpg" alt="밀크샌드웨이퍼">
+                  <div class="cover">
+                    <h3>밀크샌드웨이퍼</h3>
+                    <p>얇고 바삭한 비스킷 속  <br>부드러운 크림으로  <br>간편하게 즐기는 스낵</p>
+                  </div>
+                </a>
+              </li>
+              <li><!--MD메뉴2-->
+                <a href="#">
+                  <img src="./images/menu_md2.jpg" alt="카페라떼">
+                  <div class="cover">
+                    <h3>카페라떼</h3>
+                    <p>에스프레소의 진한 바디감에<br> 부드럽고, 고소한 우유의 풍미가<br>어우러진 제품</p>
+                  </div>
+                </a>
+              </li>
+              <li><!--MD메뉴3-->
+                <a href="#">
+                  <img src="./images/menu_md3.jpg"alt="아이스 콜드브루 30T">
+                  <div class="cover">
+                    <h3>아이스 콜드브루 30T</h3>
+                    <p>부드러운 콜드브루 커피의 <br> 맛과 향을 그대로 살려 <br> 찬물이나 우유에 바로 넣어 <br> 마실 수 있는 스틱 커피</p>
+                  </div>
+                </a>
+              </li>
+              <li><!--MD메뉴4-->
+                <a href="#">
+                  <img src="./images/menu_md4.jpg"alt="디카페인 아메리카노 30T">
+                  <div class="cover">
+                    <h3>디카페인 아메리카노 30T</h3>
+                    <p>사탕수수를 활용한 친환경적인 <br>공법으로 카페인을 제거하여 커피의 <br>자연스러운 산미와 풍미 살린 <br>디카페인 스틱커피</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+      </div>
+        <p class="vall"><a href="#">VIEW ALL</a></p>
+    </div>
+    </div>
+  </section>
+  <!--------hollys live--------->
+<section id="section3">
+  <div class="inner">
+    <div class="div1">
+
+       <article class="d_left"> <!--왼쪽-->
+         <h2><span>HOLLYS</span><br> LIVE</h2>
+         <p>
+           할리스의 이야기를 실시간으로 만나보세요.
+         </p>
+            <div class="sns-btn">
+              <a href="#"><img src="./images/facebook-icon-file2.png" alt="페이스북 아이콘"></a>
+              <a href="#"><img src="./images/naver-icon-file.png" alt="네이버 아이콘"></a>
+              <a href="#"><img src="./images/—Pngtree—instagram icon instagram logo_3571406.png" alt="인스타그램 아이콘"></a>
+            </div>
+       </article>        
+
+       <article class="d_center">  <!--오른쪽-->
+           <section class="regular slider">
+               <div class="img1"><!--img1-->
+                 <a href="#">
+                     <div class="cover">
+                    <p><img src="./images/facebook-icon-file.png" alt="페이스북 바로가기"></p>
+                  </div>
+                  <p class="ilve-img"><img src="images/live1.jpg"></p>
+                </a>
+               </div>
+               <div><!--img2-->
+                <a href="#">
+                  <div class="cover">
+                    <p><img src="./images/instagram logo_1.png" alt="인스타그램 바로가기"></p>
+                  </div>
+                  <p class="ilve-img"><img src="images/live2.jpg"></p>
+                </a>
+               </div>
+               <div><!--img3-->
+                <a href="#">
+                  <div class="cover">
+                    <p><img src="./images/naver-icon-file2.png" alt="네이버 바로가기"></p>
+                  </div>
+                  <p class="ilve-img"> <img src="images/live3.jpg"></p>
+                </a>
+               </div>
+               <div><!--img4-->
+                <a href="#">
+                  <div class="cover">
+                 <p><img src="./images/facebook-icon-file.png" alt="페이스북 바로가기"></p>
+               </div>
+               <p class="ilve-img"><img src="images/live1.jpg"></p>
+             </a>
+               </div>
+               <div><!--img4-->
+                <a href="#">
+                  <div class="cover">
+                 <p><img src="./images/facebook-icon-file.png" alt="페이스북 바로가기"></p>
+               </div>
+               <p class="ilve-img"><img src="images/live2.jpg"></p>
+             </a>
+               </div>
+            
+           </section>
+    </div>  
+</section>
+<!--------hollys 새소식-->
+<section id="section4" class=" inner">
+  <div class="inner">
+    <div class="div1 news">
+
+       <article class="d_left"> <!--왼쪽-->
+         <h2><span>HOLLYS</span><br>새소식</h2>
+            <div class="news-btn"> <!--메뉴 탭-->
+              <ul class="news-list">
+                <li><a href="#news-panel1-1"class="news-on">전체보기</a></li>
+                <li><a href="#news-panel1-2">공지사항</a></li>
+                <li><a href="#news-panel1-3">이벤트</a></li>
+              </ul>
+       </article>        
+
+       <article class="d_center">  <!--오른쪽-->
+           <section class="news">
+              
+            <div class="panels">
+              <div class="news-panel" id="news-panel1-1">
+                <ul><!--전체보기-->
+                  <li><!--1-->
+                    <a href="#">
+                    
+                          <h3>공지사항</h3>
+                          <p>풀이 얼마나 커다란 별과 그들은 방황하여도, 어디 만물은 열매를 철환하였는가? 남는 낙원을 찾아다녀도, 인류의 같이 못하다 봄바람이다. 영원히 평화스러운 풀밭에 구하기 스며들어 약동하다. 무엇을 오직 인간은 노년에게서 그들의 이상, 것이다.보라, 새 눈이 끓는다 ...                 </p>
+                          <p class="view-all">VIEW ALL</p>
+                    </a>
+                  </li>
+                  <li><!--2-->
+                    <a href="#">
+                        <h3>이벤트</h3>
+                        <p>풀이 얼마나 커다란 별과 그들은 방황하여도, 어디 만물은 열매를 철환하였는가? 남는 낙원을 찾아다녀도, 인류의 같이 못하다 봄바람이다. 영원히 평화스러운 풀밭에 구하기 스며들어 약동하다. 무엇을 오직 인간은 노년에게서 그들의 이상, 것이다.보라, 새 눈이 끓는다 ...</p>
+                        <p class="view-all">VIEW ALL</p>
+                    </a>
+                  </li>
+                  <li><!--3-->
+                    <a href="#">
+                   
+                        <h3>공지사항</h3>
+                        <p>풀이 얼마나 커다란 별과 그들은 방황하여도, 어디 만물은 열매를 철환하였는가? 남는 낙원을 찾아다녀도, 인류의 같이 못하다 봄바람이다. 영원히 평화스러운 풀밭에 구하기 스며들어 약동하다. 무엇을 오직 인간은 노년에게서 그들의 이상, 것이다.보라, 새 눈이 끓는다 ...</p>
+                        <p class="view-all">VIEW ALL</p>
+                    </a>
+                  </li>
+           
+                </ul>
+              </div>
+              <div class="news-panel" id="news-panel1-2">
+                <ul><!--공지사항-->
+                  <li><!--1-->
+                    <a href="#">
+                        <h3>공지사항</h3>
+                        <p>열매를 청춘을 살았으며, 눈이 위하여서. 살 그들의 발휘하기 타오르고 청춘의 되려니와, 그들은 못할 품에 사막이다. 황금시대를 예수는 그들을 이상이 무엇을 살 뛰노는 있음으로써 것 ...</p>
+                        <p class="view-all">VIEW ALL</p>
+                    </a>
+                  </li>
+                  <li><!--2-->
+                    <a href="#">
+                    
+                        <h3>공지사항</h3>
+                        <p>열매를 청춘을 살았으며, 눈이 위하여서. 살 그들의 발휘하기 타오르고 청춘의 되려니와, 그들은 못할 품에 사막이다. 황금시대를 예수는 그들을 이상이 무엇을 살 뛰노는 있음으로써 것은 것이다. 찾아다녀도, 품고 사랑의 쓸쓸하랴? ...</p>
+                        <p class="view-all">VIEW ALL</p>
+                    </a>
+                  </li>
+                  <li><!--3-->
+                    <a href="#">
+                  
+                        <h3>공지사항</h3>
+                        <p>풀이 얼마나 커다란 별과 그들은 방황하여도, 어디 만물은 열매를 철환하였는가? 남는 낙원을 찾아다녀도, 인류의 같이 못하다 봄바람이다. 영원히 평화스러운 풀밭에 구하기 스며들어 약동하다. 무엇을 오직 인간은 노년에게서 그들의 이상, 것이다.보라, 새 눈이 끓는다 ...</p>
+                        <p class="view-all">VIEW ALL</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="news-panel" id="news-panel1-3">
+                <ul><!--이벤트3-->
+                  <li><!--1-->
+                    <a href="#">
+                        <h3>이벤트</h3>
+                        <p>풀이 얼마나 커다란 별과 그들은 방황하여도, 어디 만물은 열매를 철환하였는가? 남는 낙원을 찾아다녀도, 인류의 같이 못하다 봄바람이다. 영원히 평화스러운 풀밭에 구하기 스며들어 약동하다. 무엇을 오직 인간은 노년에게서 그들의 이상, 것이다.보라, 새 눈이 끓는다 ...</p>
+                        <p class="view-all">VIEW ALL</p>
+                    </a>
+                  </li>
+                  <li><!--2-->
+                    <a href="#">
+                  
+                        <h3>이벤트</h3>
+                        <p>풀이 얼마나 커다란 별과 그들은 방황하여도, 어디 만물은 열매를 철환하였는가? 남는 낙원을 찾아다녀도, 인류의 같이 못하다 봄바람이다. 영원히 평화스러운 풀밭에 구하기 스며들어 약동하다. 무엇을 오직 인간은 노년에게서 그들의 이상, 것이다.보라, 새 눈이 끓는다 ...</p>
+                        <p class="view-all">VIEW ALL</p>
+                    </a>
+                  </li>
+                  <li><!--3-->
+                    <a href="#">
+                   
+                        <h3>이벤트</h3>
+                        <p>풀이 얼마나 커다란 별과 그들은 방황하여도, 어디 만물은 열매를 철환하였는가? 남는 낙원을 찾아다녀도, 인류의 같이 못하다 봄바람이다. 영원히 평화스러운 풀밭에 구하기 스며들어 약동하다. 무엇을 오직 인간은 노년에게서 그들의 이상, 것이다.보라, 새 눈이 끓는다 ...</p>
+                        <p class="view-all">VIEW ALL</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+               </div>
+              
+           </section>
+  </div>
+ </div>
+</section>
+
+
+<section id="section5" class="inner">
+
+  <div class="section5-box">
+    <article class="franc"><!--왼쪽-->
+      <div class="f-text-box"><!--멤버십 텍스트 박스-->
+          <div> <!--멤버십 텍스트-->
+            <h2><span>HOLLYS</span><br>FRANCHISE</h2>
+
+            <p>전국 커피전문점 고객만족도 1위<br><span>HOLLYS COFFEE</span>와 함께하실 가맹점주를 모집합니다.</p>
+          </div><!--멤버십 텍스트 닫기-->
+
+      </div><!--멤버십 텍스트 박스 닫기-->
+      <div class="f-img"><!--멤버십 이미지 박스-->
+        <a href="#"><img src="./images/franc1.jpg" alt="스마트오더 페이지 이동하기"></a>
+
+      </div><!--멤버십 이미지 박스(닫기)-->
+
+  </article><!--왼쪽닫기-->
+
+      <article class="member"><!--오른쪽-->
+          <div class="m-text-box"><!--멤버십 텍스트 박스-->
+              <div> <!--멤버십 텍스트-->
+                <h2><span>HOLLYS</span><br>MEMBERSHIP</h2>
+
+                <p>멤버십 가입 후 할리스 전용 스마트 오더와 함께<br><span>편리하고 다양한 혜택</span>을 즐겨보세요.</p>
+              </div><!--멤버십 텍스트 닫기-->
+              <div class="m-app"><!--멤버십 어플다운-->
+                <a href="#"><img src="./images/app_store (1).png" alt="플레이스토어 어플 다운 바로가기 버튼"></a>
+                <a href="#"><img src="./images/app_store (2).png" alt="앱스토어 어플 다운 바로가기 버튼"></a>
+              </div><!--멤버십 어플다운 닫기-->
+          </div><!--멤버십 텍스트 박스 닫기-->
+          <div class="m-img"><!--멤버십 이미지 박스-->
+            <a href="#"><img src="./images/membership2.png" alt="스마트오더 페이지 이동하기"></a>
+            <a href="#"><img src="./images/membership1.png" alt="멤버십 혜택 페이지 이동하기"></a>
+          </div><!--멤버십 이미지 박스(닫기)-->
+
+      </article>
+  </div><!--section5-box-->
+</section>
+  <!-------------푸터------------->
+  <footer id="footer">
+
+    <div>
+      <p class="footer1"> <a href="#">개인정보처리방침</a> │ <a href="#">서비스이용약관</a> │ <a href="#">멤버십이용약관</a> │ <a href="#">할리스카드이용약관</a> │<a href="#"> 고객문의</a> │ <a href="#">고객설문 </a>│ <a href="#">사이트맵 </a>│<a href="#"> BI 소개</a>
+      </p>
+      <p class="footer2">법인명: (주) 케이지할리스에프앤비 대표자: 이종현 사업자등록번호 211-87-61044 통신판매업: 제2019-서울종로-0193호<br>
+        주소 : 서울특별시 종로구 율곡로 88 삼환빌딩 8층 (운니동) 대표전화 : 02-2188-7100 (가맹문의 : 02-6350-7229)
+      </p>
+       <p class="footer3"> COPYRIGHT (C) KG HOLLYS F&B. All Rights Reserved.</p>
+    </div>
+  </footer>
+</div>
+
+
+<div id="quick" class="quick_box fix"><!--퀵박스-->
+  <ul>
+    <li>
+      <a href="#"><img src="./images/fix1.png" alt="매장찾기"> </a>
+    </li>
+    <li>
+      <a href="#"><img src="./images/fix2.png" alt="채팅봇"></a>
+    </li>
+  </ul>
+</div><!--퀵박스 닫기-->
+
+</body>
+</html>
