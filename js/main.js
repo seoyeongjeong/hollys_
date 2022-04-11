@@ -3,7 +3,10 @@ $(function(){
   $('.center').slick({
       dots: true,
       infinite: true,
-      speed: 300,
+      speed: 500,
+    //  autoplay : true,
+  //    autoplaySpeed : 4000, 
+   //   pauseOnHover : true,
       slidesToShow: 1,
       centerMode: true
 });//슬라이드
@@ -16,7 +19,11 @@ $(function(){
     var panel = $(this).find('.panel');
 
     $(href_on).show();
+    //누르면 화면 이동하는 거 작동 안하게 하는 것 ↓
+jQuery('.bests a').click(function () {
+   return false;
 
+});
     anchor.each(function(){
         var href_this = $(this).attr('href');
         $(this).click(function(){
@@ -24,11 +31,7 @@ $(function(){
             anchor.removeClass('on');
             $(this).addClass('on');
             $(href_this).show();
-    //누르면 화면 이동하는 거 작동 안하게 하는 것 ↓
-jQuery('.bests a').click(function () {
-   return false;
 
-});
         })
     })
 })
@@ -45,7 +48,12 @@ $('.news-btn').each(function(){
     var anchor_on = $(this).find('.news-list a.news-on'); //b) a중 .on 
     var href_on = anchor_on.attr('href'); //c) b의 href ==> #panel1-1
     var panel = $(this).find('.news-panel');
+       //누르면 화면 이동하는 거 작동 안하게 하는 것 ↓
+jQuery('.news-list a').click(function () {
+   return false;
+   
 
+});
     $(href_on).show();
     anchor.each(function(){
         var href_this = $(this).attr('href');
@@ -54,12 +62,7 @@ $('.news-btn').each(function(){
             anchor.removeClass('news-on');
             $(this).addClass('news-on');
             $(href_this).show();
-       //누르면 화면 이동하는 거 작동 안하게 하는 것 ↓
-jQuery('.news-list a').click(function () {
-   return false;
-   
 
-});
     
         })
     })
