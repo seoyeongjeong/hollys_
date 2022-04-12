@@ -67,6 +67,24 @@ jQuery('.news-list a').click(function () {
         })
     })
 })
+//슬라이드_m
+if ($(window).width() < 850) {
+    $('#nav').hide();
+    $('#section1 img').attr('src','images/main_slider1_m.jpg');
+  }else {
+    $('#nav').show();
+    $('#section1 img').attr('src','images/main_slider1.jpg');
+  }
+$(window).resize(function(){
+  if ($(window).width() < 850) {
+    $('#nav').hide();
+    $('#section1 img').attr('src','images/main_slider1_m.jpg');
+  }else {
+   $('#nav').show();
+    $('#section1 img').attr('src','images/main_slider1.jpg');
+  }
+})//슬라이드닫기
+
 
 //프랜차이즈 메뉴탭
 $('.franc-tabSet').each(function(){
@@ -91,6 +109,8 @@ jQuery('.franc-tabs a').click(function () {
         })
     })
 })
+
+
 //픽시드
 
 $(window).scroll(function(){
@@ -100,6 +120,7 @@ $(".quick_box ").stop().animate({top:windowTop+"px" },500);
 //$("#q_mn").stop().animate({속성:"속성값", 속성:"속성값" },1000);	
 
 });
+
 })//ready
 
 
