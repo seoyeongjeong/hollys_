@@ -751,7 +751,7 @@ font-size: 0.8rem;
 .quick_box {
 
     position:absolute; top:850px; right:50px;
-         width:60px; height:250px; 
+         width:60px; height:250px; z-index: 99999999;
 				 }
 }
 .quick_box.fix {
@@ -836,6 +836,7 @@ font-size: 0.8rem;
     }
     #section3 .sns-btn {
         justify-content: flex-end;
+        margin-right: 20px;
     }
     #section3 .d_left>p {
         margin-bottom: 30px;
@@ -919,14 +920,29 @@ font-size: 0.8rem;
 }
 
 @media all and (max-width:818px){
+
+    #section1 div {
+        margin: 0px 0px;
+    }
+    #section1 div img {
+        border-radius: 0;
+    }
     #section2 .panel li:nth-child(3)  {
         display: none;
     }
+    
 }
 @media all and (max-width:650px){
+    .quick_box {
+        position: absolute;
+        top:950px;
+        right: 20px;
+        width: 60px;
+        height: 250px;
+    }
     #section4 {
      
-        margin-bottom: 60px;
+        margin-bottom: 60px; 
     }
     #section4 .news-panel li a {
         border: none;
@@ -936,6 +952,29 @@ font-size: 0.8rem;
         padding: 40px 50px;
         text-align: left;
     
+    }
+    #section5 .member{
+       
+    }
+    #section5 .m-app {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        position: absolute;
+       top:100%;
+        right: 10px;
+        transform: translateY(30px);
+    }
+    #section5 .m-text-box {
+        margin-bottom: 80px;
+       
+    }
+    #section5 .m-img img {
+        border-radius: 20px;
+        width: 100%;
+    }
+    #section5 .m-img a {
+        width: calc((100% - 10px)/2);margin: 0px 10px 0px 10px;
     }
     #section4 .news-panel ul {
         display: flex;
@@ -956,14 +995,24 @@ font-size: 0.8rem;
         text-align: center;
     }
     #section5 .f-img img {
-        width: 100%;
+        width: 100%;border-radius:0px;
     }
-
+    #section2 .best-m li a {
+        font-size: 0.8rem;
+        margin: 0px 20px;
+    }
 
 }
 
 
 @media all and (max-width:897px){
+    .quick_box {
+        position: absolute;
+        top: 850px;
+        right: 20px;
+        width: 60px;
+        height: 250px;
+    }
     #section4 {
      
         margin-bottom: 60px;
@@ -1034,7 +1083,7 @@ font-size: 0.8rem;
         width: 100%;
     }
     #section5 .f-img img {
-    border-radius: 40px;
+    border-radius: 20px;
     width: 200%;
 }
 

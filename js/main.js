@@ -1,5 +1,5 @@
 
-$(function(){
+$(function(){//슬라이드
   $('.center').slick({
       dots: true,
       infinite: true,
@@ -10,7 +10,22 @@ $(function(){
       slidesToShow: 1,
       centerMode: true,
       arrows : false,
-});//슬라이드
+      responsive: [    //반응형               
+      {  breakpoint: 1000,    //몇 픽셀부터 바꿀건지
+             settings: {
+               slidesToShow: 1,
+               slidesToScroll: 1
+             }
+        }, {  breakpoint: 660,
+             settings: {
+               slidesToShow: 1,
+               slidesToScroll: 1,
+               centerMode: false,//반응형일땐 센터 안 함
+            
+             }
+        }
+] 
+});
     
   //메뉴탭
   $('.best-m').each(function(){
@@ -53,11 +68,14 @@ $('.btn_all').click(function(){
       sta = 0;
   }
 })
+//모바일 네비 목록
 $('.box ul ul').hide();
 $('.box > ul > li').click(function(){
   $('.box ul ul').slideUp();
   $(this).find('ul').slideDown();
 })
+
+
 //sns슬라이드
 $(".regular").slick({
     dots: false,
@@ -196,7 +214,7 @@ jQuery('.franc-tabs a').click(function () {
 
 $(window).scroll(function(){
     
-var	windowTop =$(window).scrollTop()+350;
+var	windowTop =$(window).scrollTop()+600;
 $(".quick_box ").stop().animate({top:windowTop+"px" },500);
 //$("#q_mn").stop().animate({속성:"속성값", 속성:"속성값" },1000);	
 
